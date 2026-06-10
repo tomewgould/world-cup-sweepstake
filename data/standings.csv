@@ -1,0 +1,49 @@
+group,position,team,owner,played,wins,draws,losses,goals_for,goals_against,goal_difference,points,status
+A,1,Mexico,Alex,0,0,0,0,0,0,0,0,Not started
+A,2,South Africa,Beth,0,0,0,0,0,0,0,0,Not started
+A,3,South Korea,Charlie,0,0,0,0,0,0,0,0,Not started
+A,4,Czech Republic,Daisy,0,0,0,0,0,0,0,0,Not started
+B,1,Canada,Beth,0,0,0,0,0,0,0,0,Not started
+B,2,Bosnia & Herzegovina,Daisy,0,0,0,0,0,0,0,0,Not started
+B,3,Qatar,Charlie,0,0,0,0,0,0,0,0,Not started
+B,4,Switzerland,Alex,0,0,0,0,0,0,0,0,Not started
+C,1,Brazil,Beth,0,0,0,0,0,0,0,0,Not started
+C,2,Morocco,Charlie,0,0,0,0,0,0,0,0,Not started
+C,3,Haiti,Alex,0,0,0,0,0,0,0,0,Not started
+C,4,Scotland,Daisy,0,0,0,0,0,0,0,0,Not started
+D,1,United States,Daisy,0,0,0,0,0,0,0,0,Not started
+D,2,Paraguay,Charlie,0,0,0,0,0,0,0,0,Not started
+D,3,Australia,Beth,0,0,0,0,0,0,0,0,Not started
+D,4,Turkey,Alex,0,0,0,0,0,0,0,0,Not started
+E,1,Germany,Elliot,0,0,0,0,0,0,0,0,Not started
+E,2,Curacao,Freya,0,0,0,0,0,0,0,0,Not started
+E,3,Ivory Coast,George,0,0,0,0,0,0,0,0,Not started
+E,4,Ecuador,Hannah,0,0,0,0,0,0,0,0,Not started
+F,1,Netherlands,Freya,0,0,0,0,0,0,0,0,Not started
+F,2,Japan,Elliot,0,0,0,0,0,0,0,0,Not started
+F,3,Sweden,Hannah,0,0,0,0,0,0,0,0,Not started
+F,4,Tunisia,George,0,0,0,0,0,0,0,0,Not started
+G,1,Belgium,Freya,0,0,0,0,0,0,0,0,Not started
+G,2,Egypt,Elliot,0,0,0,0,0,0,0,0,Not started
+G,3,Iran,George,0,0,0,0,0,0,0,0,Not started
+G,4,New Zealand,Hannah,0,0,0,0,0,0,0,0,Not started
+H,1,Spain,George,0,0,0,0,0,0,0,0,Not started
+H,2,Cape Verde,Hannah,0,0,0,0,0,0,0,0,Not started
+H,3,Saudi Arabia,Freya,0,0,0,0,0,0,0,0,Not started
+H,4,Uruguay,Elliot,0,0,0,0,0,0,0,0,Not started
+I,1,France,Isaac,0,0,0,0,0,0,0,0,Not started
+I,2,Senegal,Jasmine,0,0,0,0,0,0,0,0,Not started
+I,3,Iraq,Liam,0,0,0,0,0,0,0,0,Not started
+I,4,Norway,Molly,0,0,0,0,0,0,0,0,Not started
+J,1,Argentina,Jasmine,0,0,0,0,0,0,0,0,Not started
+J,2,Algeria,Molly,0,0,0,0,0,0,0,0,Not started
+J,3,Austria,Isaac,0,0,0,0,0,0,0,0,Not started
+J,4,Jordan,Liam,0,0,0,0,0,0,0,0,Not started
+K,1,Portugal,Jasmine,0,0,0,0,0,0,0,0,Not started
+K,2,DR Congo,Isaac,0,0,0,0,0,0,0,0,Not started
+K,3,Uzbekistan,Liam,0,0,0,0,0,0,0,0,Not started
+K,4,Colombia,Molly,0,0,0,0,0,0,0,0,Not started
+L,1,England,Molly,0,0,0,0,0,0,0,0,Not started
+L,2,Croatia,Liam,0,0,0,0,0,0,0,0,Not started
+L,3,Ghana,Jasmine,0,0,0,0,0,0,0,0,Not started
+L,4,Panama,Isaac,0,0,0,0,0,0,0,0,Not started

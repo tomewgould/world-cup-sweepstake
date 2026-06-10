@@ -1,0 +1,105 @@
+match_id,date,kickoff_uk,stage,group,home_team,away_team,city,country,status
+1,2026-06-11,20:00,Group,A,Mexico,South Africa,Mexico City,Mexico,Scheduled
+2,2026-06-12,03:00,Group,A,South Korea,Czech Republic,Zapopan,Mexico,Scheduled
+3,2026-06-12,20:00,Group,B,Canada,Bosnia & Herzegovina,Toronto,Canada,Scheduled
+4,2026-06-13,02:00,Group,D,United States,Paraguay,Los Angeles,USA,Scheduled
+5,2026-06-13,20:00,Group,B,Qatar,Switzerland,Santa Clara,USA,Scheduled
+6,2026-06-13,23:00,Group,C,Brazil,Morocco,New Jersey,USA,Scheduled
+7,2026-06-14,02:00,Group,C,Haiti,Scotland,Foxborough,USA,Scheduled
+8,2026-06-14,05:00,Group,D,Australia,Turkey,Vancouver,Canada,Scheduled
+9,2026-06-14,18:00,Group,E,Germany,Curacao,Houston,USA,Scheduled
+10,2026-06-14,21:00,Group,F,Netherlands,Japan,Arlington,USA,Scheduled
+11,2026-06-15,00:00,Group,E,Ivory Coast,Ecuador,Philadelphia,USA,Scheduled
+12,2026-06-15,03:00,Group,F,Sweden,Tunisia,Guadalupe,Mexico,Scheduled
+13,2026-06-15,17:00,Group,H,Spain,Cape Verde,Atlanta,USA,Scheduled
+14,2026-06-15,20:00,Group,G,Belgium,Egypt,Seattle,USA,Scheduled
+15,2026-06-15,23:00,Group,H,Saudi Arabia,Uruguay,Miami,USA,Scheduled
+16,2026-06-16,02:00,Group,G,Iran,New Zealand,Los Angeles,USA,Scheduled
+17,2026-06-16,20:00,Group,I,France,Senegal,New Jersey,USA,Scheduled
+18,2026-06-16,23:00,Group,I,Iraq,Norway,Foxborough,USA,Scheduled
+19,2026-06-17,02:00,Group,J,Argentina,Algeria,Kansas City,USA,Scheduled
+20,2026-06-17,05:00,Group,J,Austria,Jordan,Santa Clara,USA,Scheduled
+21,2026-06-17,18:00,Group,K,Portugal,DR Congo,Houston,USA,Scheduled
+22,2026-06-17,21:00,Group,L,England,Croatia,Arlington,USA,Scheduled
+23,2026-06-18,00:00,Group,L,Ghana,Panama,Toronto,Canada,Scheduled
+24,2026-06-18,03:00,Group,K,Uzbekistan,Colombia,Mexico City,Mexico,Scheduled
+25,2026-06-18,17:00,Group,A,Czech Republic,South Africa,Atlanta,USA,Scheduled
+26,2026-06-18,20:00,Group,B,Switzerland,Bosnia & Herzegovina,Los Angeles,USA,Scheduled
+27,2026-06-18,23:00,Group,B,Canada,Qatar,Vancouver,Canada,Scheduled
+28,2026-06-19,02:00,Group,A,Mexico,South Korea,Zapopan,Mexico,Scheduled
+29,2026-06-19,20:00,Group,D,United States,Australia,Seattle,USA,Scheduled
+30,2026-06-19,23:00,Group,C,Scotland,Morocco,Foxborough,USA,Scheduled
+31,2026-06-20,01:30,Group,C,Brazil,Haiti,Philadelphia,USA,Scheduled
+32,2026-06-20,04:00,Group,D,Turkey,Paraguay,Santa Clara,USA,Scheduled
+33,2026-06-20,18:00,Group,F,Netherlands,Sweden,Houston,USA,Scheduled
+34,2026-06-20,21:00,Group,E,Germany,Ivory Coast,Toronto,Canada,Scheduled
+35,2026-06-21,01:00,Group,E,Ecuador,Curacao,Kansas City,USA,Scheduled
+36,2026-06-21,05:00,Group,F,Tunisia,Japan,Guadalupe,Mexico,Scheduled
+37,2026-06-21,17:00,Group,H,Spain,Saudi Arabia,Atlanta,USA,Scheduled
+38,2026-06-21,20:00,Group,G,Belgium,Iran,Los Angeles,USA,Scheduled
+39,2026-06-21,23:00,Group,H,Uruguay,Cape Verde,Miami,USA,Scheduled
+40,2026-06-22,02:00,Group,G,New Zealand,Egypt,Vancouver,Canada,Scheduled
+41,2026-06-22,18:00,Group,J,Argentina,Austria,Arlington,USA,Scheduled
+42,2026-06-22,22:00,Group,I,France,Iraq,Philadelphia,USA,Scheduled
+43,2026-06-23,01:00,Group,I,Norway,Senegal,Toronto,Canada,Scheduled
+44,2026-06-23,04:00,Group,J,Jordan,Algeria,Santa Clara,USA,Scheduled
+45,2026-06-23,18:00,Group,K,Portugal,Uzbekistan,Houston,USA,Scheduled
+46,2026-06-23,21:00,Group,L,England,Ghana,Foxborough,USA,Scheduled
+47,2026-06-24,00:00,Group,L,Panama,Croatia,Foxborough,USA,Scheduled
+48,2026-06-24,03:00,Group,K,Colombia,DR Congo,Zapopan,Mexico,Scheduled
+49,2026-06-24,20:00,Group,B,Switzerland,Canada,Vancouver,Canada,Scheduled
+50,2026-06-24,20:00,Group,B,Bosnia & Herzegovina,Qatar,Seattle,USA,Scheduled
+51,2026-06-24,23:00,Group,C,Morocco,Haiti,Atlanta,USA,Scheduled
+52,2026-06-24,23:00,Group,C,Scotland,Brazil,Miami,USA,Scheduled
+53,2026-06-25,02:00,Group,A,South Africa,South Korea,Guadalupe,Mexico,Scheduled
+54,2026-06-25,02:00,Group,A,Czech Republic,Mexico,Mexico City,Mexico,Scheduled
+55,2026-06-25,21:00,Group,E,Curacao,Ivory Coast,Philadelphia,USA,Scheduled
+56,2026-06-25,21:00,Group,E,Ecuador,Germany,New Jersey,USA,Scheduled
+57,2026-06-26,00:00,Group,F,Tunisia,Netherlands,Kansas City,USA,Scheduled
+58,2026-06-26,00:00,Group,F,Japan,Sweden,Arlington,USA,Scheduled
+59,2026-06-26,03:00,Group,D,Turkey,United States,Los Angeles,USA,Scheduled
+60,2026-06-26,03:00,Group,D,Paraguay,Australia,Santa Clara,USA,Scheduled
+61,2026-06-26,20:00,Group,I,Norway,France,Foxborough,USA,Scheduled
+62,2026-06-26,20:00,Group,I,Senegal,Iraq,Toronto,Canada,Scheduled
+63,2026-06-27,01:00,Group,H,Cape Verde,Saudi Arabia,Houston,USA,Scheduled
+64,2026-06-27,01:00,Group,H,Uruguay,Spain,Zapopan,Mexico,Scheduled
+65,2026-06-27,04:00,Group,G,New Zealand,Belgium,Vancouver,Canada,Scheduled
+66,2026-06-27,04:00,Group,G,Egypt,Iran,Seattle,USA,Scheduled
+67,2026-06-27,22:00,Group,L,Panama,England,New Jersey,USA,Scheduled
+68,2026-06-27,22:00,Group,L,Croatia,Ghana,Philadelphia,USA,Scheduled
+69,2026-06-28,00:30,Group,K,Colombia,Portugal,Miami,USA,Scheduled
+70,2026-06-28,00:30,Group,K,DR Congo,Uzbekistan,Atlanta,USA,Scheduled
+71,2026-06-28,03:00,Group,J,Algeria,Austria,Kansas City,USA,Scheduled
+72,2026-06-28,03:00,Group,J,Jordan,Argentina,Arlington,USA,Scheduled
+73,2026-06-28,20:00,Round of 32,,Group A runners-up,Group B runners-up,Los Angeles,USA,Scheduled
+76,2026-06-29,18:00,Round of 32,,Group C winners,Group F runners-up,Houston,USA,Scheduled
+74,2026-06-29,21:30,Round of 32,,Group E winners,Group A/B/C/D/F third place,Foxborough,USA,Scheduled
+75,2026-06-30,02:00,Round of 32,,Group F winners,Group C runners-up,Guadalupe,Mexico,Scheduled
+78,2026-06-30,18:00,Round of 32,,Group E runners-up,Group I runners-up,Arlington,USA,Scheduled
+77,2026-06-30,22:00,Round of 32,,Group I winners,Group C/D/F/G/H third place,New Jersey,USA,Scheduled
+79,2026-07-01,02:00,Round of 32,,Group A winners,Group C/E/F/H/I third place,Mexico City,Mexico,Scheduled
+80,2026-07-01,17:00,Round of 32,,Group L winners,Group E/H/I/J/K third place,Atlanta,USA,Scheduled
+82,2026-07-01,21:00,Round of 32,,Group G winners,Group A/E/H/I/J third place,Seattle,USA,Scheduled
+81,2026-07-02,01:00,Round of 32,,Group D winners,Group B/E/F/I/J third place,Santa Clara,USA,Scheduled
+84,2026-07-02,20:00,Round of 32,,Group H winners,Group J runners-up,Los Angeles,USA,Scheduled
+83,2026-07-03,00:00,Round of 32,,Group K runners-up,Group L runners-up,Toronto,Canada,Scheduled
+85,2026-07-03,04:00,Round of 32,,Group B winners,Group E/F/G/I/J third place,Vancouver,Canada,Scheduled
+88,2026-07-03,19:00,Round of 32,,Group D runners-up,Group G runners-up,Arlington,USA,Scheduled
+86,2026-07-03,23:00,Round of 32,,Group J winners,Group H runners-up,Miami,USA,Scheduled
+87,2026-07-04,02:30,Round of 32,,Group K winners,Group D/E/I/J/L third place,Kansas City,USA,Scheduled
+90,2026-07-04,18:00,Round of 16,,Match 73 winners,Match 75 winners,Houston,USA,Scheduled
+89,2026-07-04,22:00,Round of 16,,Match 74 winners,Match 77 winners,Philadelphia,USA,Scheduled
+91,2026-07-05,21:00,Round of 16,,Match 76 winners,Match 78 winners,New Jersey,USA,Scheduled
+92,2026-07-06,01:00,Round of 16,,Match 79 winners,Match 80 winners,Mexico City,Mexico,Scheduled
+93,2026-07-06,20:00,Round of 16,,Match 83 winners,Match 84 winners,Arlington,USA,Scheduled
+94,2026-07-07,01:00,Round of 16,,Match 81 winners,Match 82 winners,Seattle,USA,Scheduled
+95,2026-07-07,17:00,Round of 16,,Match 86 winners,Match 88 winners,Atlanta,USA,Scheduled
+96,2026-07-07,21:00,Round of 16,,Match 85 winners,Match 87 winners,Vancouver,Canada,Scheduled
+97,2026-07-09,21:00,Quarter-final,,Match 89 winners,Match 90 winners,Foxborough,USA,Scheduled
+98,2026-07-10,20:00,Quarter-final,,Match 93 winners,Match 94 winners,Los Angeles,USA,Scheduled
+99,2026-07-11,22:00,Quarter-final,,Match 91 winners,Match 92 winners,Miami,USA,Scheduled
+100,2026-07-12,02:00,Quarter-final,,Match 95 winners,Match 96 winners,Kansas City,USA,Scheduled
+101,2026-07-14,20:00,Semi-final,,Match 97 winners,Match 98 winners,Arlington,USA,Scheduled
+102,2026-07-15,20:00,Semi-final,,Match 99 winners,Match 100 winners,Atlanta,USA,Scheduled
+103,2026-07-18,22:00,Third-place playoff,,Match 101 losers,Match 102 losers,Miami,USA,Scheduled
+104,2026-07-19,20:00,Final,,Match 101 winners,Match 102 winners,New Jersey,USA,Scheduled
