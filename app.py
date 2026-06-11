@@ -1,3 +1,4 @@
+from html import escape
 from pathlib import Path
 from typing import Optional
 
@@ -6,6 +7,108 @@ import streamlit as st
 
 
 DATA_DIR = Path(__file__).parent / "data"
+
+COUNTRY_FLAGS = {
+    "Algeria": "🇩🇿",
+    "Argentina": "🇦🇷",
+    "Australia": "🇦🇺",
+    "Austria": "🇦🇹",
+    "Belgium": "🇧🇪",
+    "Bosnia & Herzegovina": "🇧🇦",
+    "Brazil": "🇧🇷",
+    "Canada": "🇨🇦",
+    "Cape Verde": "🇨🇻",
+    "Colombia": "🇨🇴",
+    "Croatia": "🇭🇷",
+    "Curacao": "🇨🇼",
+    "Czech Republic": "🇨🇿",
+    "DR Congo": "🇨🇩",
+    "Ecuador": "🇪🇨",
+    "Egypt": "🇪🇬",
+    "England": "\U0001F3F4\U000E0067\U000E0062\U000E0065\U000E006E\U000E0067\U000E007F",
+    "France": "🇫🇷",
+    "Germany": "🇩🇪",
+    "Ghana": "🇬🇭",
+    "Haiti": "🇭🇹",
+    "Iran": "🇮🇷",
+    "Iraq": "🇮🇶",
+    "Ivory Coast": "🇨🇮",
+    "Japan": "🇯🇵",
+    "Jordan": "🇯🇴",
+    "Mexico": "🇲🇽",
+    "Morocco": "🇲🇦",
+    "Netherlands": "🇳🇱",
+    "New Zealand": "🇳🇿",
+    "Norway": "🇳🇴",
+    "Panama": "🇵🇦",
+    "Paraguay": "🇵🇾",
+    "Portugal": "🇵🇹",
+    "Qatar": "🇶🇦",
+    "Saudi Arabia": "🇸🇦",
+    "Scotland": "\U0001F3F4\U000E0067\U000E0062\U000E0073\U000E0063\U000E0074\U000E007F",
+    "Senegal": "🇸🇳",
+    "South Africa": "🇿🇦",
+    "South Korea": "🇰🇷",
+    "Spain": "🇪🇸",
+    "Sweden": "🇸🇪",
+    "Switzerland": "🇨🇭",
+    "Tunisia": "🇹🇳",
+    "Turkey": "🇹🇷",
+    "United States": "🇺🇸",
+    "Uruguay": "🇺🇾",
+    "Uzbekistan": "🇺🇿",
+}
+
+COUNTRY_FLAG_CODES = {
+    "Algeria": "dz",
+    "Argentina": "ar",
+    "Australia": "au",
+    "Austria": "at",
+    "Belgium": "be",
+    "Bosnia & Herzegovina": "ba",
+    "Brazil": "br",
+    "Canada": "ca",
+    "Cape Verde": "cv",
+    "Colombia": "co",
+    "Croatia": "hr",
+    "Curacao": "cw",
+    "Czech Republic": "cz",
+    "DR Congo": "cd",
+    "Ecuador": "ec",
+    "Egypt": "eg",
+    "England": "gb-eng",
+    "France": "fr",
+    "Germany": "de",
+    "Ghana": "gh",
+    "Haiti": "ht",
+    "Iran": "ir",
+    "Iraq": "iq",
+    "Ivory Coast": "ci",
+    "Japan": "jp",
+    "Jordan": "jo",
+    "Mexico": "mx",
+    "Morocco": "ma",
+    "Netherlands": "nl",
+    "New Zealand": "nz",
+    "Norway": "no",
+    "Panama": "pa",
+    "Paraguay": "py",
+    "Portugal": "pt",
+    "Qatar": "qa",
+    "Saudi Arabia": "sa",
+    "Scotland": "gb-sct",
+    "Senegal": "sn",
+    "South Africa": "za",
+    "South Korea": "kr",
+    "Spain": "es",
+    "Sweden": "se",
+    "Switzerland": "ch",
+    "Tunisia": "tn",
+    "Turkey": "tr",
+    "United States": "us",
+    "Uruguay": "uy",
+    "Uzbekistan": "uz",
+}
 
 
 st.set_page_config(
@@ -46,6 +149,15 @@ st.markdown(
         font-size: 1.05rem;
         font-weight: 700;
         margin: 0.2rem 0;
+    }
+    .flag {
+        display: inline-block;
+        width: 1.35em;
+        height: 1em;
+        margin-right: 0.35rem;
+        object-fit: cover;
+        vertical-align: -0.1em;
+        border-radius: 2px;
     }
     @media (max-width: 640px) {
         .block-container {
@@ -111,6 +223,19 @@ def format_team_list(teams: list[str]) -> str:
     return ", ".join(teams)
 
 
+def format_team(team: str) -> str:
+    team_name = escape(str(team))
+    flag_code = COUNTRY_FLAG_CODES.get(str(team))
+    if not flag_code:
+        return team_name
+
+    return (
+        f'<img class="flag" src="https://flagcdn.com/24x18/{flag_code}.png" '
+        f'srcset="https://flagcdn.com/48x36/{flag_code}.png 2x" '
+        f'alt="{team_name} flag"> {team_name}'
+    )
+
+
 def upcoming_matches(fixtures: pd.DataFrame, owners: pd.DataFrame) -> pd.DataFrame:
     matches = fixtures.copy()
     matches["kickoff"] = pd.to_datetime(
@@ -144,30 +269,22 @@ def completed_results(results: pd.DataFrame, fixtures: pd.DataFrame) -> pd.DataF
     )
 
 
-def biggest_defeat(
-    results: pd.DataFrame, fixtures: pd.DataFrame, owners: pd.DataFrame
+def lowest_group_goal_difference(
+    standings: pd.DataFrame, owners: pd.DataFrame
 ) -> Optional[pd.Series]:
-    completed = completed_results(results, fixtures)
-    if completed.empty:
+    ranked = add_standing_owners(standings, owners)
+    ranked["owner"] = ranked["owner"].fillna("TBC")
+    ranked["played"] = pd.to_numeric(ranked["played"], errors="coerce")
+    ranked["goal_difference"] = pd.to_numeric(
+        ranked["goal_difference"], errors="coerce"
+    )
+    ranked = ranked.dropna(subset=["played", "goal_difference"])
+    ranked = ranked[ranked["played"] > 0]
+    if ranked.empty:
         return None
 
-    completed["margin"] = (completed["home_goals"] - completed["away_goals"]).abs()
-    completed = completed[completed["margin"] > 0].sort_values(
-        ["margin", "match_id"], ascending=[False, True]
-    )
-    if completed.empty:
-        return None
-
-    row = completed.iloc[0].copy()
-    losing_team = (
-        row["away_team"] if row["home_goals"] > row["away_goals"] else row["home_team"]
-    )
-    owner = owners.loc[owners["team"].eq(losing_team), "owner"]
-    row["losing_team"] = losing_team
-    row["losing_owner"] = owner.iloc[0] if not owner.empty else "TBC"
-    row["scoreline"] = f"{row['home_team']} {int(row['home_goals'])}-{int(row['away_goals'])} {row['away_team']}"
-    row["match"] = f"{row['home_team']} vs {row['away_team']}"
-    return row
+    ranked = ranked.sort_values(["goal_difference", "team"], ascending=[True, True])
+    return ranked.iloc[0]
 
 
 def render_match_card(row: pd.Series) -> None:
@@ -177,7 +294,7 @@ def render_match_card(row: pd.Series) -> None:
         f"""
         <div class="sweep-card">
             <div class="muted">{kickoff} UK - {row["stage"]} - Group {format_group(row["group"])}</div>
-            <div class="match-title">{row["home_team"]} vs {row["away_team"]}</div>
+            <div class="match-title">{format_team(row["home_team"])} vs {format_team(row["away_team"])}</div>
             <div>{row["home_owner"]} vs {row["away_owner"]}</div>
         </div>
         """,
@@ -221,7 +338,6 @@ def groups_page(standings: pd.DataFrame, owners: pd.DataFrame) -> None:
         st.dataframe(
             group_rows[
                 [
-                    "group",
                     "position",
                     "team",
                     "owner",
@@ -307,29 +423,27 @@ def power_rankings_page(standings: pd.DataFrame, owners: pd.DataFrame) -> None:
         render_power_card(row)
 
 
-def awards_page(
-    results: pd.DataFrame, fixtures: pd.DataFrame, owners: pd.DataFrame
-) -> None:
+def awards_page(standings: pd.DataFrame, owners: pd.DataFrame) -> None:
     st.subheader("Awards")
     col1, col2, col3 = st.columns(3)
     col1.metric("Tournament winner", "TBC")
     col2.metric("Runner-up", "TBC")
     col3.metric("Third place", "TBC")
 
-    st.markdown("#### Biggest defeat")
-    defeat = biggest_defeat(results, fixtures, owners)
-    if defeat is None:
-        st.info("No completed matches yet.")
+    st.markdown("#### Lowest group-stage goal difference")
+    lowest_goal_difference = lowest_group_goal_difference(standings, owners)
+    if lowest_goal_difference is None:
+        st.info("No group-stage results yet.")
         return
 
     st.markdown(
         f"""
         <div class="sweep-card">
-            <div class="muted">{defeat["stage"]} - Group {format_group(defeat["group"])}</div>
-            <div class="match-title">{defeat["scoreline"]}</div>
-            <div><strong>Losing team:</strong> {defeat["losing_team"]} ({defeat["losing_owner"]})</div>
-            <div><strong>Match:</strong> {defeat["match"]}</div>
-            <div><strong>Defeat margin:</strong> {int(defeat["margin"])} goals</div>
+            <div class="muted">Group {format_group(lowest_goal_difference["group"])}</div>
+            <div class="match-title">{lowest_goal_difference["team"]} ({lowest_goal_difference["owner"]})</div>
+            <div><strong>Goal difference:</strong> {int(lowest_goal_difference["goal_difference"])}</div>
+            <div><strong>Record:</strong> {int(lowest_goal_difference["wins"])}W {int(lowest_goal_difference["draws"])}D {int(lowest_goal_difference["losses"])}L</div>
+            <div><strong>Goals:</strong> {int(lowest_goal_difference["goals_for"])} for, {int(lowest_goal_difference["goals_against"])} against</div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -341,7 +455,7 @@ def teams_page(owners: pd.DataFrame) -> None:
     owners = owners.sort_values(["owner", "team"])
 
     for owner, rows in owners.groupby("owner", sort=True):
-        teams = ", ".join(rows["team"].tolist())
+        teams = ", ".join(format_team(team) for team in rows["team"].tolist())
         st.markdown(
             f"""
             <div class="sweep-card">
@@ -367,7 +481,7 @@ def main() -> None:
     with rankings:
         power_rankings_page(standings, owners)
     with awards:
-        awards_page(results, fixtures, owners)
+        awards_page(standings, owners)
     with teams:
         teams_page(owners)
 
